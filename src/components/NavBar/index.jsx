@@ -5,7 +5,7 @@ import "./styles.css";
 const NavBar = () => {
   return (    
     <nav className="navbar navbar-expand-lg bg-light">
-      <div className="container-fluid">
+      <div className="container-fluid navBar">
         <a className="navbar-brand" href="/#">
           Total eSports
         </a>
@@ -24,12 +24,12 @@ const NavBar = () => {
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
               <a className="nav-link active" aria-current="page" href="/#">
-                Home
+                Calzado
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="/#">
-                Link
+                Indumentaria
               </a>
             </li>
             <li className="nav-item dropdown">
@@ -40,17 +40,17 @@ const NavBar = () => {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Dropdown
+                Accesorios
               </a>
               <ul className="dropdown-menu">
                 <li>
                   <a className="dropdown-item" href="/#">
-                    Action
+                    Bolsos y Mochilas
                   </a>
                 </li>
                 <li>
                   <a className="dropdown-item" href="/#">
-                    Another action
+                    Pelotas
                   </a>
                 </li>
                 <li>
@@ -58,14 +58,14 @@ const NavBar = () => {
                 </li>
                 <li>
                   <a className="dropdown-item" href="/#">
-                    Something else here
+                    Outdoors
                   </a>
                 </li>
               </ul>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <a className="nav-link disabled" href="/#">Disabled</a>
-            </li>
+            </li> */}
           </ul>          
         </div>
       </div>       
