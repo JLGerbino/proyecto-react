@@ -1,14 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import CartWidget from "../CartWidget";
 import "./styles.css";
 
 const NavBar = () => {
   return (    
     <nav className="navbar navbar-expand-lg bg-light">
-      <div className="container-fluid navBar">
-        <a className="navbar-brand" href="/#">
-          Total eSports
-        </a>
+      <div className="container-fluid navBar">          
+        <Link className="navbar-brand" to="/">Total eSports</Link>        
         <button
           className="navbar-toggler"
           type="button"
@@ -23,25 +22,35 @@ const NavBar = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="/#">
-                Calzado
-              </a>
+              <Link className="nav-link active" aria-current="page" to="/category/jewelery">
+                Joyería
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/#">
-                Indumentaria
-              </a>
+              <Link className="nav-link active" to="/category/electronics">
+                Electrónica
+              </Link>
             </li>
-            <li className="nav-item dropdown">
-              <a
+            <li className="nav-item">
+              <Link className="nav-link active" to="/category/men's clothing">
+                Ropa de hombres
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link active" to="/category/women's clothing">
+                Ropa de Mujer
+              </Link>
+            </li>
+            {/*<li className="nav-item dropdown">
+              <Link
                 className="nav-link dropdown-toggle"
-                href="/#"
+                to="/"
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
                 Accesorios
-              </a>
+              </Link>
               <ul className="dropdown-menu">
                 <li>
                   <a className="dropdown-item" href="/#">
@@ -62,7 +71,7 @@ const NavBar = () => {
                   </a>
                 </li>
               </ul>
-            </li>
+            </li>*
             {/* <li className="nav-item">
               <a className="nav-link disabled" href="/#">Disabled</a>
             </li> */}
