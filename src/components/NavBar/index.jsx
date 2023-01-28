@@ -79,7 +79,7 @@ const NavBar = () => {
         </div>
       </div>       
     <CartWidget/>
-    <span>3</span>    
+    {/*<span>3</span>*/}    
     </nav>   
   );
 };
