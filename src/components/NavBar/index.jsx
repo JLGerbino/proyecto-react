@@ -6,8 +6,9 @@ import "./styles.css";
 const NavBar = () => {
   return (    
     <nav className="navbar navbar-expand-lg bg-light">
-      <div className="container-fluid navBar">          
-        <Link className="navbar-brand" to="/">Total eSports</Link>        
+      <div className="container-fluid navBar"> 
+        <Link to="/"><img src={"../assets/images/logo1.jpg"} width={60} height={60} alt="logo" /></Link>       
+        <Link className="navbar-brand" to="/">Total eSports </Link>        
         <button
           className="navbar-toggler"
           type="button"

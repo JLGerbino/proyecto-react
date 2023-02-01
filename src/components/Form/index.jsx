@@ -9,6 +9,7 @@ const FormComp = ({ confirmPurchase, formVis, setFormVis }) => {
     register,
     handleSubmit,
     formState: { errors },
+    getValues
   } = useForm();
     
   const onSubmit = (dataDelFormulario) => {
@@ -44,7 +45,7 @@ const FormComp = ({ confirmPurchase, formVis, setFormVis }) => {
               className="form-control"
               type="email"
               name="email1"
-              {...register("email", { minLength: 3, required: true })}
+              {...register("email1", { minLength: 3, required: true })}
             />
             {errors?.email?.type === "minLength" && (
               <p>La dirección de mail no es valida</p>
@@ -52,18 +53,21 @@ const FormComp = ({ confirmPurchase, formVis, setFormVis }) => {
             {errors?.email?.type === "required" && (
               <p>Es necesario ingresar tu email</p>
             )}
-            <label >Corfimar email</label>
+            <label >Confimar email</label>
             <input
             className="form-control"
               type="email"
               name="email2"
-              {...register("email2", { minLength: 3, required: true })}
+              {...register("email2", { minLength: 3, required: true, validate: {igualMail: mail2 => mail2 === getValues().emal1}})}
             />
             {errors?.email?.type === "minLength" && (
               <p>La dirección de mail no es valida</p>
             )}
             {errors?.email?.type === "required" && (
               <p>Es necesario ingresar tu email</p>
+            )}
+            {errors?.email?.type === "igualMail" && (
+              <p>Los emails tienen que ser iguales</p>
             )}
             {/*{ email !== confEmail ?
             <p>es necesario</p>:
