@@ -22,23 +22,23 @@ const NavBar = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to="/category/jewelery">
-                Joyería
+              <Link className="nav-link active" aria-current="page" to="/category/ropa hombres">
+                Hombres
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link active" to="/category/electronics">
-                Electrónica
+              <Link className="nav-link active" to="/category/ropa mujer">
+                Mujer
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link active" to="/category/men's clothing">
-                Ropa de hombres
+              <Link className="nav-link active" to="/category/zapatillas">
+                Zapatillas
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link active" to="/category/women's clothing">
-                Ropa de Mujer
+              <Link className="nav-link active" to="/category/accesorios">
+                Accesorios
               </Link>
             </li>
             {/*<li className="nav-item dropdown">

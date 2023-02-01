@@ -66,17 +66,20 @@ const Cart = () => {
             <thead>
               <tr>
                 <th scope="col">id</th>
-                <th scope="col">image</th>
-                <th scope="col">title</th>
-                <th scope="col">price</th>
-                <th scope="col">quantity</th>
-                <th scope="col">remove</th>
+                <th scope="col">Imagen</th>
+                <th scope="col">Producto</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Eliminar</th>
               </tr>
             </thead>
             <tbody>
               {products.map((product) => {
                 return <TableRow key={product.id} product={product} />;
               })}
+            </tbody>
+            <tbody>
+            {`Total de su compra $ ${total()}`}
             </tbody>
           </table>
           {loader ? (
