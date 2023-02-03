@@ -64,8 +64,9 @@ const ItemListContainer = ({ greeting }) => {
               width={700}
             />
           </div>
-          <button
+          <button className="btn btn-primary p-2"
             style={{
+              color:"black",
               backgroundColor: "orange",
               width: 100,
               padding: 8,
