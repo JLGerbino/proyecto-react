@@ -2,22 +2,22 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-import { useState } from "react";
 
 const FormComp = ({ confirmPurchase, formVis, setFormVis }) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-    getValues
+    getValues,
   } = useForm();
-    
+
   const onSubmit = (dataDelFormulario) => {
     confirmPurchase(dataDelFormulario);
-  }; // your form submit function which will invoke after successful validation
+  }; 
   const handleClose = () => {
-    setFormVis(false);   
+    setFormVis(false);
   };
+
   return (
     <>
       <Modal show={formVis} onHide={handleClose}>
@@ -28,7 +28,7 @@ const FormComp = ({ confirmPurchase, formVis, setFormVis }) => {
           <Modal.Body>
             <label>Nombre</label>
             <input
-            className="form-control"
+              className="form-control"
               {...register("nombre", {
                 required: true,
                 minLength: 2,
@@ -47,34 +47,37 @@ const FormComp = ({ confirmPurchase, formVis, setFormVis }) => {
               name="email1"
               {...register("email1", { minLength: 3, required: true })}
             />
-            {errors?.email?.type === "minLength" && (
+            {errors?.email1?.type === "minLength" && (
               <p>La dirección de mail no es valida</p>
             )}
-            {errors?.email?.type === "required" && (
+            {errors?.email1?.type === "required" && (
               <p>Es necesario ingresar tu email</p>
             )}
-            <label >Confimar email</label>
+            <label>Confimar email</label>
             <input
-            className="form-control"
+              className="form-control"
               type="email"
               name="email2"
-              {...register("email2", { minLength: 3, required: true, validate: {igualMail: mail2 => mail2 === getValues().emal1}})}
+              {...register("email2", {
+                minLength: 3,
+                required: true,
+                validate: {
+                  equalMails: (mail2) => mail2 === getValues().email1,
+                },
+              })}
             />
-            {errors?.email?.type === "minLength" && (
+            {errors?.email2?.type === "minLength" && (
               <p>La dirección de mail no es valida</p>
             )}
-            {errors?.email?.type === "required" && (
+            {errors?.email2?.type === "required" && (
               <p>Es necesario ingresar tu email</p>
             )}
-            {errors?.email?.type === "igualMail" && (
-              <p>Los emails tienen que ser iguales</p>
+            {errors?.email2?.type === "equalMails" && (
+              <p>Los mails deben ser iguales</p>
             )}
-            {/*{ email !== confEmail ?
-            <p>es necesario</p>:
-            null}*/}
             <label>Teléfono</label>
             <input
-            className="form-control"
+              className="form-control"
               type="number"
               {...register("phone", {
                 minLength: 10,

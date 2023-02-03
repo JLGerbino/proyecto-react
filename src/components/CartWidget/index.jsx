@@ -11,7 +11,7 @@ const CartWidget = () => {
   
   return ( 
    <>  
-    <Link to="/cart"><HiShoppingCart style={{height: 50, width: 50}}/></Link> 
+    <Link to="/cart"><HiShoppingCart style={{height: 50, width: 50, color: 'black'}}/></Link> 
     <span>{countCart()}</span>    
    </>
   )
